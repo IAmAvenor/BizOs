@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Login() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -71,7 +72,11 @@ export default function Login() {
                   secureTextEntry={securePassword}
                 />
                 <Pressable onPress={() => setSecurePassword(!securePassword)}>
-                  <Text style={styles.eyeIcon}>{securePassword ? "👁️" : "🙈"}</Text>
+                  <MaterialCommunityIcons 
+                    name={securePassword ? "eye-off" : "eye"} 
+                    size={24} 
+                    color="gray" 
+                  />
                 </Pressable>
               </View>
             </View>

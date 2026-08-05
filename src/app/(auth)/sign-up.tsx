@@ -12,6 +12,8 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 export default function Signup() {
   const [isChecked, setIsChecked] = useState(false);
@@ -54,7 +56,7 @@ export default function Signup() {
           <View style={styles.formContainer}>
             {/* Full Name */}
             <View style={styles.inputOuterBox}>
-              <Text style={styles.inputLabel}>👤 Full Name</Text>
+              <Text style={styles.inputLabel}> <MaterialCommunityIcons name="account" size={12} color="black" /> Full Name</Text>
               <TextInput
                 style={styles.textInputStyle}
                 placeholder="John Doe"
@@ -64,7 +66,7 @@ export default function Signup() {
 
             {/* Email Address */}
             <View style={styles.inputOuterBox}>
-              <Text style={styles.inputLabel}>✉️ Email Address</Text>
+              <Text style={styles.inputLabel}><MaterialCommunityIcons name="email" size={12} color="black" /> Email Address</Text>
               <TextInput
                 style={styles.textInputStyle}
                 placeholder="you@business.com"
@@ -76,7 +78,7 @@ export default function Signup() {
 
             {/* Phone Number */}
             <View style={styles.inputOuterBox}>
-              <Text style={styles.inputLabel}>📞 Phone Number</Text>
+              <Text style={styles.inputLabel}> <MaterialCommunityIcons name="phone" size={12} color="black" /> Phone Number</Text>
               <TextInput
                 style={styles.textInputStyle}
                 placeholder="+234 801 234 5678"
@@ -87,7 +89,7 @@ export default function Signup() {
 
             {/* Password */}
             <View style={styles.inputOuterBox}>
-              <Text style={styles.inputLabel}>🔒 Password</Text>
+              <Text style={styles.inputLabel}><MaterialCommunityIcons name="lock" size={12} color="black" /> Password</Text>
               <View style={styles.rowAlign}>
                 <TextInput
                   style={[styles.textInputStyle, { flex: 1 }]}
@@ -96,14 +98,18 @@ export default function Signup() {
                   secureTextEntry={securePassword}
                 />
                 <Pressable onPress={() => setSecurePassword(!securePassword)}>
-                  <Text style={styles.eyeIcon}>{securePassword ? "👁️" : "🙈"}</Text>
+                   <MaterialCommunityIcons 
+                    name={securePassword ? "eye-off" : "eye"} 
+                    size={24} 
+                    color="gray" 
+                  />
                 </Pressable>
               </View>
             </View>
 
             {/* Confirm Password */}
             <View style={styles.inputOuterBox}>
-              <Text style={styles.inputLabel}>🔒 Confirm Password</Text>
+              <Text style={styles.inputLabel}><MaterialCommunityIcons name="lock" size={12} color="black" /> Confirm Password</Text>
               <View style={styles.rowAlign}>
                 <TextInput
                   style={[styles.textInputStyle, { flex: 1 }]}
@@ -112,7 +118,11 @@ export default function Signup() {
                   secureTextEntry={secureConfirmPassword}
                 />
                 <Pressable onPress={() => setSecureConfirmPassword(!secureConfirmPassword)}>
-                  <Text style={styles.eyeIcon}>{secureConfirmPassword ? "👁️" : "🙈"}</Text>
+                 <MaterialCommunityIcons 
+                    name={securePassword ? "eye-off" : "eye"} 
+                    size={24} 
+                    color="gray" 
+                  />
                 </Pressable>
               </View>
             </View>
@@ -155,9 +165,17 @@ export default function Signup() {
           {/* Social Buttons */}
           <View style={styles.socialButtonsRow}>
             <Pressable style={styles.socialButton}>
+               <Image 
+                source={require("@/assets/images/google.png")} 
+                style={styles.socialIconImage} 
+              />
               <Text style={styles.socialButtonText}>Google</Text>
             </Pressable>
             <Pressable style={styles.socialButton}>
+               <Image 
+                source={require("@/assets/images/apple.png")} 
+                style={styles.socialIconImage} 
+              />
               <Text style={styles.socialButtonText}>Apple</Text>
             </Pressable>
           </View>
@@ -341,6 +359,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 48,
     borderWidth: 1,
+    flexDirection:"row",
     borderColor: "#E5E7EB",
     borderRadius: 12,
     justifyContent: "center",
@@ -363,5 +382,12 @@ const styles = StyleSheet.create({
   hyperlinkText: {
     color: "#00A86B",
     fontWeight: "600",
+  },
+  
+    socialIconImage: {
+    width: 20,
+    height: 20,
+    resizeMode: "contain",
+    marginRight: 12, 
   },
 });
