@@ -80,9 +80,9 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="more"
+        name="menu"
         options={{
-          title: "More",
+          title: "Menu",
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "menu" : "menu-outline"}

@@ -1,14 +1,20 @@
-import { View, Text, StyleSheet, FlatList, TextInput,  SafeAreaView,Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TextInput,  SafeAreaView,Image,TouchableOpacity,Dimensions,} from 'react-native';
 import { useState } from 'react';
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const customersData = [
-  { id: '1', name: 'Sarah johnson', email: 'sarah@gmail.com', amount:'$620', percentage: '70%',icon: require('../../../assets/images/mine.png'),bgColor: '#EFF6FF' },
-  { id: '2', name: 'Micheal Brown', email: 'micheal@gmail.com', amount:'$620', percentage: '60%',icon: require('../../../assets/images/mine.png'), bgColor: '#EFF6FF' },
-  { id: '3', name: 'David Wilson', email: 'david@gmail.com', amount:'$620', percentage: '68%',icon: require('../../../assets/images/mine.png'), bgColor: '#EFF6FF' },
-  { id: '4', name: 'Emily Davis', email: 'emily@gmail.com',amount:'$620', percentage: '40%',icon: require('../../../assets/images/mine.png'),bgColor: '#EFF6FF' },
-  { id: '5', name: 'James Anderson', email: 'james@gmail.com', amount:'$620', percentage: '55%',icon: require('../../../assets/images/mine.png'), bgColor: '#EFF6FF' },
+  { id: '1', name: 'Sarah johnson', email: 'sarah@gmail.com', amount:'$1,240', percentage: 'VIP', percentageBg:"#FEF3C7", percentageColor: "#D97706", icon: require('../../../assets/images/sarah.png'),bgColor: '#EFF6FF' },
+  { id: '2', name: 'Micheal Brown', email: 'micheal@gmail.com', amount:'$980', percentage: '$',icon: require('../../../assets/images/No-2.png'), bgColor: '#EFF6FF' },
+  { id: '3', name: 'David Wilson', email: 'david@gmail.com', amount:'$750', percentage: '$',icon: require('../../../assets/images/No-3.png'), bgColor: '#EFF6FF' },
+  { id: '4', name: 'Emily Davis', email: 'emily@gmail.com',amount:'$650', percentage: '$',icon: require('../../../assets/images/No-4.png'),bgColor: '#EFF6FF' },
+  { id: '5', name: 'James Anderson', email: 'james@gmail.com', amount:'$620', percentage: '$',icon: require('../../../assets/images/No-5.png'), bgColor: '#EFF6FF' },
 ];
+ 
+const { width } = Dimensions.get('window');
+  const gridCardWidth = (width - 40 - 12) / 2; 
+  const mediumCardWidth = (width - 40 - 24) / 3; 
+  const smallCardWidth = (width - 40 - 42) / 4; 
+
 export default function CustomersScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredData, setFilteredData] = useState(customersData);
@@ -29,8 +35,8 @@ export default function CustomersScreen() {
   return (
    <SafeAreaView style={{ flex: 1, backgroundColor: "#F8FAFC" }}>
       <View style={styles.container}>
-      <View style={styles.header}>
         <Text style ={styles.headertext}>Customers</Text>
+      <View style={styles.header}>
           <TextInput
         style={styles.searchInput}
         placeholder="Search customers"
@@ -39,11 +45,40 @@ export default function CustomersScreen() {
         onChangeText={handleSearch}
         clearButtonMode="while-editing" // iOS only clear button
       />
+      <TouchableOpacity style={{height:40, width:'15%',backgroundColor:'white',     shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 4, }, 
+   
+    shadowOpacity: 0.06, 
+
+    shadowRadius: 8, 
+
+    elevation: 5, justifyContent:'center',alignItems:"center", borderRadius:10}}>
+
+        <MaterialCommunityIcons name="filter" size={24} color="gray" />
+      </TouchableOpacity>
       </View>
+       <View style={{flexDirection:'row', justifyContent:'space-between', gap:4, marginTop:10, marginBottom:20}}>
+
+              <TouchableOpacity style={{shadowColor: "#000",shadowOffset: {},shadowOpacity: 0.05,
+shadowRadius: 6,
+elevation: 2, backgroundColor:'#00A86B',borderRadius:20,justifyContent:'center', alignItems:"center", padding:10, width:mediumCardWidth}}>
+  <Text style={{fontSize:12, fontWeight:'bold', color:'white'}}>All(1,245)</Text>
+</TouchableOpacity>
+              <TouchableOpacity style={{shadowColor: "#000",shadowOffset: {},shadowOpacity: 0.05,
+shadowRadius: 6,
+elevation: 2, backgroundColor:'white',borderRadius:20,justifyContent:'center', alignItems:"center", padding:10, width:mediumCardWidth}}>
+  <Text style={{fontSize:12, fontWeight:'bold'}}>New</Text>
+</TouchableOpacity>
+              <TouchableOpacity style={{shadowColor: "#000",shadowOffset: {},shadowOpacity: 0.05,
+shadowRadius: 6,
+elevation: 2, backgroundColor:'white',borderRadius:20,justifyContent:'center', alignItems:"center", padding:10, width:mediumCardWidth}}>
+  <Text style={{fontSize:12, fontWeight:'bold'}}>Vip</Text>
+</TouchableOpacity>
+        </View>
       <FlatList
         data={filteredData}
         keyExtractor={(item) => item.id}
-        contentContainerStyle={{ paddingBottom: 20 }}
+        contentContainerStyle={{ paddingBottom: 20, gap:4 }}
         renderItem={({ item }) => {
            return(
 
@@ -86,13 +121,14 @@ const styles = StyleSheet.create({
     paddingTop:60
   },
   header:{
-    flexDirection:'column',
+    flexDirection:'row',
     alignItems:'flex-start',
-    justifyContent:'space-between'
+    justifyContent:'space-between', 
+    gap:6
   },
   headertext:{
     fontSize:28,
-    fontWeight:'semibold',
+    fontWeight:'bold',
     paddingBottom:16
   },
   card: {
@@ -103,6 +139,10 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     marginBottom: 12,
+     shadowColor: "#000",shadowOffset: 
+     {},shadowOpacity: 0.05,
+shadowRadius: 6,
+elevation: 5 ,
   },
   leftSection: {
     flexDirection: 'row',
@@ -147,7 +187,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     height: 40,
-    width:'100%',
+    width:'80%',
     borderColor: '#ccc',
     borderRadius: 8,
     marginBottom: 20,
@@ -162,7 +202,8 @@ const styles = StyleSheet.create({
 
     shadowRadius: 8, 
 
-    elevation: 4, 
+    elevation: 5, 
+    padding:12,
   },
 });
 
