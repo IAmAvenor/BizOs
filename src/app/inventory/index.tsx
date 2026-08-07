@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, FlatList, TextInput,  SafeAreaView,Image,Toucha
 import { useState } from 'react';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-const customersData = [
+const productsData = [
   { id: '1', name: 'Wireless headphones', categories: 'Electronics', amount:'$59.99', availability: 'In stock',availabilityColor: '#00A86B',units:'120 units', icon: require('../../../assets/images/black_headphone.png'),bgColor: '#EFF6FF' },
   { id: '2', name: 'Smart watch Series 5',categories: 'Electronics', amount:'$59.99', availability: 'Low Stock',availabilityColor: 'orange',units:'15 units',icon: require('../../../assets/images/smart_watch.png'), bgColor: '#EFF6FF' },
   { id: '3', name: 'Power Bank 20,000mAh', categories: 'Accessories', amount:'$29.99', availability: 'In stock',availabilityColor: '#00A86B',units:'85 units',icon: require('../../../assets/images/powerbank_20k.png'),bgColor: '#EFF6FF' },
@@ -16,19 +16,19 @@ const { width } = Dimensions.get('window');
 
 export default function InventoryScreen() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState(customersData);
+  const [filteredData, setFilteredData] = useState(productsData);
   const handleSearch = (text) => {
     setSearchQuery(text);
 
      if (text) {
-      const newData = customersData.filter((item) => {
+      const newData = productsData.filter((item) => {
         const itemData = item.name.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
       setFilteredData(newData);
     } else {
-      setFilteredData(customersData);
+      setFilteredData(productsData);
     }
   }
   return (
