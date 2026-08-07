@@ -102,7 +102,10 @@ elevation: 2, backgroundColor:'white',borderRadius:20,justifyContent:'center', a
             </View>
 
             <View style={styles.rightSection}>
-              <Text style={styles.percentageText}>{item.percentage}</Text>
+              <Text style={[styles.percentageText,
+                {color: item.percentageColor},
+                {backgroundColor:item.percentageBg}
+              ]}>{item.percentage}</Text>
             </View>
           </View>
         );

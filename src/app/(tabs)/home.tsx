@@ -11,7 +11,7 @@ import { StyleSheet,
   import { IconButton, Badge, Avatar } from 'react-native-paper';
  import { LineChart } from "react-native-gifted-charts";
  import { MaterialCommunityIcons } from "@expo/vector-icons";
-
+import { router } from "expo-router";
   const { width } = Dimensions.get('window');
   const gridCardWidth = (width - 40 - 12) / 2; 
   const mediumCardWidth = (width - 40 - 24) / 3; 
@@ -40,12 +40,14 @@ export default function HomeScreen() {
         </View>
         <View style={styles.avatar}>
             <IconButton icon="bell" size={30}
-        onPress={() => console.log('Notifications pressed')}
+        onPress={() => router.push('/notifications')}
         accessibilityLabel="show new notifications"></IconButton>
         <Badge visible={true} size={8} style={styles.badge}/>
         </View>
         <View>
+          <TouchableOpacity onPress={() => router.push("/profile")}>
           <Avatar.Image size={50} source={require("@/assets/images/mine.png")} style={{backgroundColor:"gray"}} />
+           </TouchableOpacity >
         </View>
       </View>
       <View style={{width:"100%", height:140, backgroundColor:"white", borderRadius:12, shadowColor: "#000",
