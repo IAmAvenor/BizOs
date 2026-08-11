@@ -179,7 +179,7 @@ elevation: 5, marginTop:10,}}>
 
           <View style={{flexDirection:'row', justifyContent:'space-between', marginTop:15}}>
             <View style={{width:smallCardWidth, height:100, alignItems:"center", gap:10}}>
-              <View style={{backgroundColor:"#DCFCE7", opacity:0.3, borderRadius:10, height:50, width:50, justifyContent:"center", alignItems:"center", shadowColor: "#000", shadowOffset: {
+              <TouchableOpacity onPress={() => router.push("/invoices")} style={{backgroundColor:"#DCFCE7", opacity:0.3, borderRadius:10, height:50, width:50, justifyContent:"center", alignItems:"center", shadowColor: "#000", shadowOffset: {
                  width: 0,
   height: 2,
 },
@@ -192,11 +192,11 @@ elevation: 5 ,
                   size={30}
                   color="#00A86B"
                 />
-              </View>
+              </TouchableOpacity>
               <Text style={{fontWeight:'900', fontSize:10}}>Invoice</Text>
             </View>
             <View style={{width:smallCardWidth, height:100, alignItems:"center", gap:10}}>
-              <View style={{backgroundColor:"#DCFCE7", opacity:0.3, borderRadius:10, height:50, width:50, justifyContent:"center", alignItems:"center", shadowColor: "#000", shadowOffset: {
+              <TouchableOpacity style={{backgroundColor:"#DCFCE7", opacity:0.3, borderRadius:10, height:50, width:50, justifyContent:"center", alignItems:"center", shadowColor: "#000", shadowOffset: {
   width: 0,
   height: 2,
 },
@@ -208,7 +208,7 @@ elevation: 5 ,}}>
                   size={30}
                   color="#00A86B"
                 />
-              </View>
+              </TouchableOpacity>
               <Text style={{fontWeight:'900', fontSize:10}}>Add Product</Text>
             </View>
             <View style={{width:smallCardWidth, height:100, alignItems:"center", gap:10}}>
@@ -229,7 +229,7 @@ elevation: 5,}}>
               <Text style={{fontWeight:'900', fontSize:10}}>Record Expense</Text>
             </View>
             <View style={{width:smallCardWidth, height:100, alignItems:"center", gap:10}}>
-              <View style={{backgroundColor:"#DCFCE7", opacity:0.3, borderRadius:10, height:50, width:50, justifyContent:"center", alignItems:"center", shadowColor: "#000",
+              <TouchableOpacity onPress={() => router.push("/message")} style={{backgroundColor:"#DCFCE7", opacity:0.3, borderRadius:10, height:50, width:50, justifyContent:"center", alignItems:"center", shadowColor: "#000",
 shadowOffset: {
   width: 0,
   height: 2,
@@ -242,7 +242,7 @@ elevation: 5 ,}}>
                   size={30}
                   color="#00A86B"
                 />
-              </View>
+              </TouchableOpacity>
               <Text style={{fontWeight:'900', fontSize:10}}>Send Message</Text>
             </View>
            

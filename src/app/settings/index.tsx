@@ -18,7 +18,7 @@ export default function SettingsScreen() {
     contentContainerStyle={{ padding: 20, paddingBottom: 50 }}
   >
             <View style={{marginTop:40, gap:12}}> 
-          <View style={{flexDirection:'row', gap:50, alignItems:'center', marginBottom:20 }}>
+          <View style={{flexDirection:'row', gap:30, alignItems:'center', marginBottom:20 }}>
               <TouchableOpacity onPress={() => router.back()}>
           <MaterialCommunityIcons
             name="arrow-left"
@@ -28,7 +28,7 @@ export default function SettingsScreen() {
             </TouchableOpacity>
               <View style={{flexDirection:"column",alignItems:'center',justifyContent:'center'}}>
             <Text style={{fontSize:20, fontWeight:"bold",}}>Settings</Text>
-            <Text style={{fontSize:10, fontWeight:"bold",}}>Manage your preferences and app settings</Text>    
+            <Text style={{fontSize:14, fontWeight:"400", color:'gray'}}>Manage your preferences and app settings</Text>    
             </View>
           </View>
         <View style={{}}>
@@ -44,14 +44,14 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row',  gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="lock-outline" size={30}
+          <MaterialCommunityIcons name="bell-outline" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Change Password</Text>
-  <Text style={{fontSize:15, }}>Update your account password</Text>
+   <View style={{flexDirection:'column', flex:1}}>
+  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Notifications</Text>
+  <Text style={{fontSize:15, }}>Manage alerts</Text>
   </View>
   <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
        <MaterialCommunityIcons name="chevron-right" size={24}
@@ -69,14 +69,14 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row',  gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="lock-outline" size={30}
+          <MaterialCommunityIcons name="white-balance-sunny" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Change Password</Text>
-  <Text style={{fontSize:15, }}>Update your account password</Text>
+   <View style={{flexDirection:'column', flex:1}}>
+  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Appearance</Text>
+  <Text style={{fontSize:15, }}>Choose your theme</Text>
   </View>
   <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
        <MaterialCommunityIcons name="chevron-right" size={24}
@@ -86,12 +86,9 @@ export default function SettingsScreen() {
     </View>
            
         
-    <View style={{flexDirection:'row', gap:4, alignItems:'center',}}>
-           <View style={{height:30, width:30, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12 }}>
-          <MaterialCommunityIcons name="shield-outline" size={24}
-      color="#10B981" />
-       </View>
-      <Text style={{fontSize:16, fontWeight:'bold'}}>Account</Text>
+    <View style={{}}>
+
+      <Text style={{fontSize:16, fontWeight:'bold', color:'gray'}}>BUSINESS</Text>
         </View>
              <View style={{ shadowColor: "#000",
     shadowOffset: {
@@ -103,14 +100,14 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row', gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="lock-outline" size={30}
+          <MaterialCommunityIcons name="office-building-outline" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Change Password</Text>
-  <Text style={{fontSize:15, }}>Update your account password</Text>
+   <View style={{flexDirection:'column', flex:1}}>
+  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Business Information</Text>
+  <Text style={{fontSize:15, }}>Business details</Text>
   </View>
   <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
        <MaterialCommunityIcons name="chevron-right" size={24}
@@ -128,14 +125,14 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row',  gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="account-lock-outline" size={30}
+          <MaterialCommunityIcons name="account-group-outline" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Login Activity</Text>
-  <Text style={{fontSize:15, }}>View your active sessions</Text>
+   <View style={{flexDirection:'column', flex:1}}>
+  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Team Members</Text>
+  <Text style={{fontSize:15, }}>Manage your team</Text>
   </View>
   <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
        <MaterialCommunityIcons name="chevron-right" size={24}
@@ -153,14 +150,14 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row', gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="account-lock-outline" size={30}
+          <MaterialCommunityIcons name="file-document-outline" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Login Activity</Text>
-  <Text style={{fontSize:15, }}>View your active sessions</Text>
+   <View style={{flexDirection:'column', flex:1}}>
+  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Currency & Invoice</Text>
+  <Text style={{fontSize:15, }}>Invoice preferences</Text>
   </View>
   <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
        <MaterialCommunityIcons name="chevron-right" size={24}
@@ -168,12 +165,8 @@ export default function SettingsScreen() {
       </TouchableOpacity>
       </View>
     </View>
-     <View style={{flexDirection:'row', gap:4, alignItems:'center',}}>
-           <View style={{height:30, width:30, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12 }}>
-          <MaterialCommunityIcons name="shield-outline" size={24}
-      color="#10B981" />
-       </View>
-      <Text style={{fontSize:16, fontWeight:'bold'}}>Account</Text>
+     <View style={{}}>
+      <Text style={{fontSize:16, fontWeight:'bold', color:'gray'}}>SECURITY</Text>
         </View>
            <View style={{ shadowColor: "#000",
     shadowOffset: {
@@ -185,14 +178,14 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row', gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="account-lock-outline" size={30}
+          <MaterialCommunityIcons name="shield-check-outline" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Login Activity</Text>
-  <Text style={{fontSize:15, }}>View your active sessions</Text>
+   <View style={{flexDirection:'column',flex:1}}>
+  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Security</Text>
+  <Text style={{fontSize:15, }}>Protect your account</Text>
   </View>
   <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
        <MaterialCommunityIcons name="chevron-right" size={24}
@@ -204,12 +197,8 @@ export default function SettingsScreen() {
 
 
     
-    <View style={{flexDirection:'row', gap:4, alignItems:'center',}}>
-           <View style={{height:30, width:30, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12 }}>
-          <MaterialCommunityIcons name="shield-outline" size={24}
-      color="#10B981" />
-       </View>
-      <Text style={{fontSize:16, fontWeight:'bold'}}>Account</Text>
+    <View style={{}}>
+      <Text style={{fontSize:16, fontWeight:'bold', color:'gray'}}>SUPPORT</Text>
         </View>
 
 
@@ -223,16 +212,16 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row', gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="account-lock-outline" size={30}
+          <MaterialCommunityIcons name="help-circle-outline" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Login Activity</Text>
-  <Text style={{fontSize:15, }}>View your active sessions</Text>
+   <View style={{flexDirection:'column', flex:1, gap:2}}>
+  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Help & Support</Text>
+  <Text style={{fontSize:15, }}>Get help</Text>
   </View>
-  <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
+  <TouchableOpacity style={{alignSelf:'flex-end',}}>
        <MaterialCommunityIcons name="chevron-right" size={24}
       color="#10B981" />
       </TouchableOpacity>
@@ -250,16 +239,16 @@ export default function SettingsScreen() {
    backgroundColor:'white', width:'100%', height:90, borderRadius:12, flexDirection:'column', justifyContent:'center', alignItems:'self-start', padding:10
     
     }}>
-      <View style={{flexDirection:'row', gap:8, alignItems:'center'}}>
+      <View style={{flexDirection:'row', gap:8, justifyContent:'space-between', alignItems:'center'}}>
         <View style={{height:50, width:50, backgroundColor:'#ECFDF5', justifyContent:'center', alignItems:'center', borderRadius:12, }}>
-          <MaterialCommunityIcons name="account-lock-outline" size={30}
+          <MaterialCommunityIcons name="information-outline" size={30}
       color="#10B981" />
        </View>
-   <View style={{flexDirection:'column'}}>
-  <Text style={{fontSize:18, color:'gray', fontWeight:'bold'}}>Login Activity</Text>
-  <Text style={{fontSize:15, }}>View your active sessions</Text>
+   <View style={{flexDirection:'column', flex:1}}>
+  <Text style={{fontSize:20, color:'gray', fontWeight:'bold'}}>About BizOs</Text>
+  <Text style={{fontSize:15, }}>App information</Text>
   </View>
-  <TouchableOpacity style={{alignSelf:'flex-end', marginLeft:20 }}>
+  <TouchableOpacity style={{alignSelf:'flex-end', }}>
        <MaterialCommunityIcons name="chevron-right" size={24}
       color="#10B981" />
       </TouchableOpacity>

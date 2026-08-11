@@ -1,14 +1,15 @@
 import { View, Text, StyleSheet, FlatList, TextInput,  SafeAreaView,Image,TouchableOpacity,Dimensions,} from 'react-native';
 import { useState } from 'react';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { router } from 'expo-router';
 
 const customersData = [
-  { id: '1', name: 'Muhammad suleiman', email: 'muhammad@gmail.com', amount:'$1,240', percentage: 'VIP', percentageBg:"#FEF3C7", percentageColor: "#D97706", icon: require('../../../assets/images/mine.png'),bgColor: '#EFF6FF' },
-  { id: '2', name: 'Sarah johnson', email: 'sarah@gmail.com', amount:'$1,240', percentage: '$', icon: require('../../../assets/images/sarah.png'),bgColor: '#EFF6FF' },
-  { id: '3', name: 'Micheal Brown', email: 'micheal@gmail.com', amount:'$980', percentage: '$',icon: require('../../../assets/images/No-2.png'), bgColor: '#EFF6FF' },
-  { id: '4', name: 'David Wilson', email: 'david@gmail.com', amount:'$750', percentage: '$',icon: require('../../../assets/images/No-3.png'), bgColor: '#EFF6FF' },
-  { id: '5', name: 'Emily Davis', email: 'emily@gmail.com',amount:'$650', percentage: '$',icon: require('../../../assets/images/No-4.png'),bgColor: '#EFF6FF' },
-  { id: '6', name: 'James Anderson', email: 'james@gmail.com', amount:'$620', percentage: '$',icon: require('../../../assets/images/No-5.png'), bgColor: '#EFF6FF' },
+  { id: '1', name: 'muhammad suleiman', email: 'muhammad@gmail.com', number:'08011223344', Icon:'message-text-outline', IconBg:"#DCFCE7", IconColor: "#16A34A", icon: require('../../../assets/images/mine.png'),bgColor: '#EFF6FF' },
+  { id: '2', name: 'Sarah johnson', email: 'sarah@gmail.com', number:'08011223344',Icon:'message-text-outline', IconBg:"#DCFCE7", IconColor: "#16A34A", icon: require('../../../assets/images/sarah.png'),bgColor: '#EFF6FF' },
+  { id: '3', name: 'Micheal Brown', email: 'micheal@gmail.com', number:'08011223344', Icon:'message-text-outline', IconBg:"#DCFCE7", IconColor: "#16A34A", icon: require('../../../assets/images/No-2.png'), bgColor: '#EFF6FF' },
+  { id: '4', name: 'David Wilson', email: 'david@gmail.com',  number:'08011223344', Icon:'message-text-outline', IconBg:"#DCFCE7", IconColor: "#16A34A",icon: require('../../../assets/images/No-3.png'), bgColor: '#EFF6FF' },
+  { id: '5', name: 'Emily Davis', email: 'emily@gmail.com',  number:'08011223344', Icon:'message-text-outline', IconBg:"#DCFCE7", IconColor: "#16A34A",icon: require('../../../assets/images/No-4.png'),bgColor: '#EFF6FF' },
+  { id: '6', name: 'James Anderson', email: 'james@gmail.com', number:'08011223344',Icon:'message-text-outline', IconBg:"#DCFCE7", IconColor: "#16A34A", icon: require('../../../assets/images/No-5.png'), bgColor: '#EFF6FF' },
 ];
  
 const { width } = Dimensions.get('window');
@@ -16,7 +17,7 @@ const { width } = Dimensions.get('window');
   const mediumCardWidth = (width - 40 - 24) / 3; 
   const smallCardWidth = (width - 40 - 42) / 4; 
 
-export default function CustomersScreen() {
+export default function MessageScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredData, setFilteredData] = useState(customersData);
   const handleSearch = (text) => {
@@ -36,8 +37,11 @@ export default function CustomersScreen() {
   return (
    <SafeAreaView style={{ flex: 1, backgroundColor: "#F8FAFC" }}>
       <View style={styles.container}>
-        <Text style ={styles.headertext}>Customers</Text>
-      <View style={styles.header}>
+        <View style={{flexDirection:'row', alignItems:'center', gap:60, marginBottom:10}}>
+        <MaterialCommunityIcons name='chevron-left' size={30} color="black" />
+        <Text style ={styles.headertext}>Send Message</Text>
+        </View>
+      <View style={styles.header}> 
           <TextInput
         style={styles.searchInput}
         placeholder="Search customers"
@@ -59,22 +63,10 @@ export default function CustomersScreen() {
       </TouchableOpacity>
       </View>
        <View style={{flexDirection:'row', justifyContent:'space-between', gap:4, marginTop:10, marginBottom:20}}>
-
-              <TouchableOpacity style={{shadowColor: "#000",shadowOffset: {},shadowOpacity: 0.05,
-shadowRadius: 6,
-elevation: 2, backgroundColor:'#00A86B',borderRadius:20,justifyContent:'center', alignItems:"center", padding:10, width:mediumCardWidth}}>
-  <Text style={{fontSize:12, fontWeight:'bold', color:'white'}}>All(1,245)</Text>
-</TouchableOpacity>
-              <TouchableOpacity style={{shadowColor: "#000",shadowOffset: {},shadowOpacity: 0.05,
-shadowRadius: 6,
-elevation: 2, backgroundColor:'white',borderRadius:20,justifyContent:'center', alignItems:"center", padding:10, width:mediumCardWidth}}>
-  <Text style={{fontSize:12, fontWeight:'bold'}}>New</Text>
-</TouchableOpacity>
-              <TouchableOpacity style={{shadowColor: "#000",shadowOffset: {},shadowOpacity: 0.05,
-shadowRadius: 6,
-elevation: 2, backgroundColor:'white',borderRadius:20,justifyContent:'center', alignItems:"center", padding:10, width:mediumCardWidth}}>
-  <Text style={{fontSize:12, fontWeight:'bold'}}>Vip</Text>
-</TouchableOpacity>
+          <Text style={{fontSize:18, fontWeight:'bold'}}>Recent Customers</Text>
+          <TouchableOpacity>
+            <Text style={{color:'#00A86B',}}>View All</Text>
+          </TouchableOpacity>
         </View>
       <FlatList
         data={filteredData}
@@ -98,15 +90,25 @@ elevation: 2, backgroundColor:'white',borderRadius:20,justifyContent:'center', a
               <View>
                 <Text style={styles.subjectName}>{item.name}</Text>
                 <Text style={styles.topicsText}>{item.email}</Text>
-                <Text style={styles.topicsText}>Total Spent:{item.amount}</Text>
+                <Text style={{}}>{item.number}</Text>
               </View>
             </View>
 
             <View style={styles.rightSection}>
-              <Text style={[styles.percentageText,
-                {color: item.percentageColor},
-                {backgroundColor:item.percentageBg}
-              ]}>{item.percentage}</Text>
+              <View style={{backgroundColor: item.IconBg, width:30, height:30, justifyContent:'center', alignItems:'center', borderRadius:4}}>
+              <TouchableOpacity  onPress={() =>
+              router.push({
+                pathname: "/message/send-message",
+                params: { customerId: item.id },
+              })
+            }>
+            <MaterialCommunityIcons
+                name={item.Icon}
+                size={24}
+                color={item.IconColor}
+              />
+              </TouchableOpacity>
+              </View>
             </View>
           </View>
         );
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
     gap:6
   },
   headertext:{
-    fontSize:28,
+    fontSize:24,
     fontWeight:'bold',
     paddingBottom:16
   },
