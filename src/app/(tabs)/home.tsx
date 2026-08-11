@@ -115,14 +115,14 @@ elevation: 5, marginTop:10,}}>
              ▲8.2%
             </Text>
         </View>
-        <View style={{width:mediumCardWidth,height:110, backgroundColor:"white" , borderRadius:12, shadowColor: "#000", shadowColor: "#000", shadowOffset: { width: 0, height: 4,}, shadowOpacity: 0.06, shadowRadius: 12, elevation: 8, padding:10, gap:8}}>
+        <View style={{width:mediumCardWidth,height:110, backgroundColor:"white" , borderRadius:12, shadowColor: "#000", shadowOffset: { width: 0, height: 4,}, shadowOpacity: 0.06, shadowRadius: 12, elevation: 8, padding:10, gap:8}}>
            <Text style={{fontSize:16, fontWeight:"bold", color:'gray'}}>Customers</Text>
           <Text style={{fontSize:20, fontWeight:"bold"}}>1,245</Text>
            <Text style={{ color: "#22C55E" }}>
            ▲6.4%
          </Text>
         </View>
-        <View style={{width:mediumCardWidth,height:110, backgroundColor:"white", borderRadius:12, shadowColor: "#000", shadowColor: "#000", shadowOffset: { width: 0, height: 4,}, shadowOpacity: 0.06, shadowRadius: 12, elevation: 8, padding:10, gap:8}}>
+        <View style={{width:mediumCardWidth,height:110, backgroundColor:"white", borderRadius:12, shadowColor: "#000", shadowOffset: { width: 0, height: 4,}, shadowOpacity: 0.06, shadowRadius: 12, elevation: 8, padding:10, gap:8}}>
           <Text style={{fontSize:16, fontWeight:"bold", color:"gray"}}>Profit</Text>
           <Text style={{fontSize:20, fontWeight:"bold"}}>$8,430 </Text>
           <Text style={{ color: "#22C55E" }}>
